@@ -1,4 +1,4 @@
-FROM php:7.2-apache-stretch
+FROM php:7.4-apache-buster
 MAINTAINER Christian Winkler <christian.winkler@cwkr.de>
 
 ENV DOKUWIKI_VERSION=2018-04-22b
