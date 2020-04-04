@@ -4,7 +4,7 @@ MAINTAINER Christian Winkler <christian.winkler@cwkr.de>
 ENV DOKUWIKI_VERSION=2018-04-22b
 ARG DOKUWIKI_MD5SUM=605944ec47cd5f822456c54c124df255
 
-RUN apt-get update && apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev libbz2-dev wget && \
+RUN apt-get update && apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev libwebp-dev libbz2-dev wget && \
     apt-get clean -y && apt-get autoclean -y && apt-get autoremove -y
 
 RUN wget -q -O /dokuwiki.tgz "http://download.dokuwiki.org/src/dokuwiki/dokuwiki-$DOKUWIKI_VERSION.tgz" && \
