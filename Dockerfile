@@ -22,7 +22,7 @@ RUN sed -i "s/disable_functions =/disable_functions = exec,passthru,shell_exec,s
 RUN sed -i "s/session.cookie_httponly =/session.cookie_httponly = 1/g" "$PHP_INI_DIR/php.ini"
 
 RUN docker-php-ext-install bz2
-RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && docker-php-ext-install gd
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp && docker-php-ext-install gd
 RUN docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd && docker-php-ext-install pdo_mysql
 RUN docker-php-ext-configure mysqli --with-mysqli=mysqlnd && docker-php-ext-install mysqli
 
